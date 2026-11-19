@@ -1,0 +1,96 @@
+test frames: 476, motes: 51
+case 1 load 0.2 done (16 s)
+case 1 load 0.5 done (29 s)
+case 1 load 0.8 done (43 s)
+load sweep done (61 s)
+case 2 done (99 s)
+case 3 done (135 s)
+
+AES (N=120, load 0.5): total 40.6009 J with AES-256 for critical, 40.6009 J with AES-128 only
+extra energy for AES-256 = 0.000022 J (0.00005 %), AES share of total energy = 0.0028 %
+
+===== RESULTS (SF 12, payload 50) =====
+
+load 0.2  (actual p in test = 0.171)
+  N   TDMA     BM     ALOHA   NextGen  | save vs TDMA  save vs BM
+  30   17.92   10.65    6.90    4.45  |   75.2 %       58.2 %
+  60   36.73   22.27   14.02    9.73  |   73.5 %       56.3 %
+  90   56.45   34.77   21.47   15.83  |   72.0 %       54.5 %
+ 120   77.10   48.90   29.06   22.36  |   71.0 %       54.3 %
+
+load 0.5  (actual p in test = 0.457)
+  N   TDMA     BM     ALOHA   NextGen  | save vs TDMA  save vs BM
+  30   17.92   13.25   10.05    9.00  |   49.8 %       32.1 %
+  60   36.73   28.87   20.45   18.82  |   48.8 %       34.8 %
+  90   56.45   46.38   31.25   29.53  |   47.7 %       36.3 %
+ 120   77.10   66.41   42.03   40.60  |   47.3 %       38.9 %
+
+load 0.8  (actual p in test = 0.743)
+  N   TDMA     BM     ALOHA   NextGen  | save vs TDMA  save vs BM
+  30   17.92   16.08   13.34   13.83  |   22.8 %       14.0 %
+  60   36.73   35.62   27.01   28.51  |   22.4 %       20.0 %
+  90   56.45   58.39   41.28   43.65  |   22.7 %       25.2 %
+ 120   77.10   83.78   55.19   58.50  |   24.1 %       30.2 %
+
+load sweep, N = 120
+ load  p_test   TDMA     BM    NextGen  NG(c=0.5)  BM%  Hyb%  TDMA%   FPR    FNR
+  0.1   0.078   77.10   44.00   14.39    42.36      0    98     2   0.011  0.189
+  0.2   0.171   77.10   48.90   22.36    45.83      0    91     9   0.021  0.136
+  0.3   0.270   77.10   54.64   29.18    49.25      0    84    16   0.039  0.093
+  0.4   0.368   77.10   60.63   35.36    52.35      0    85    15   0.060  0.058
+  0.5   0.457   77.10   66.41   40.60    55.18      0    86    14   0.085  0.044
+  0.6   0.535   77.10   71.13   45.23    57.55      0    87    13   0.112  0.039
+  0.7   0.628   77.10   76.71   51.20    60.57      0    74    26   0.145  0.037
+  0.8   0.743   77.10   83.78   58.50    64.32      0    54    46   0.239  0.016
+  0.9   0.883   77.10   92.82   65.76    68.26      0    58    42   0.475  0.002
+BM-LoRa loses to TDMA from load 0.8
+Next Gen above TDMA at any load: 0,  above BM at any load: 0
+Next Gen (c=0.5) above TDMA: 0, above BM: 0
+
+mode boundaries from data (rho):
+  mode 2 : rho from 0.05 to 0.92 (3409 frames)
+  mode 3 : rho from 0.13 to 0.91 (875 frames)
+
+other metrics, load 0.5
+  N   PDR%: TDMA  BM  ALOHA  NG  | latency(s): TDMA  BM  ALOHA  NG | life: BM  ALOHA  NG
+  30   100.0 100.0  26.6 100.0 |   34.2   38.4   46.7   14.9 |  1.03  1.70  1.47
+  60   100.0 100.0  30.3 100.0 |   91.0   82.5   90.7   26.2 |  1.06  1.73  1.49
+  90   100.0 100.0  35.9 100.0 |  120.2  126.5  135.5   26.0 |  0.92  1.77  1.49
+ 120   100.0 100.0  37.9 100.0 |  192.7  193.1  185.0   32.1 |  0.81  1.80  1.51
+
+case 2 (load 0.5), N = 120
+  SF 12 : TDMA 77.10  BM 66.41  NextGen 40.60  (save vs BM 38.9 %)
+  SF 10 : TDMA 21.91  BM 18.53  NextGen 11.42  (save vs BM 38.4 %)
+  SF  7 : TDMA 3.59  BM 2.94  NextGen 1.83  (save vs BM 37.6 %)
+case 3 (load 0.5), N = 120
+  payload  50 : TDMA 77.10  BM 66.41  NextGen 40.60  (save vs BM 38.9 %)
+  payload  80 : TDMA 106.40  BM 87.94  NextGen 54.55  (save vs BM 38.0 %)
+  payload 100 : TDMA 125.94  BM 102.29  NextGen 63.78  (save vs BM 37.6 %)
+
+break-even accuracy (N=120):
+  p = 0.1 : A* = 0.840   GRU accuracy = 0.933
+  p = 0.2 : A* = 0.444   GRU accuracy = 0.885
+  p = 0.3 : A* = 0.142   GRU accuracy = 0.863
+  p = 0.4 : A* = 0.000   GRU accuracy = 0.851
+  p = 0.5 : A* = 0.000   GRU accuracy = 0.857
+  p = 0.6 : A* = 0.000   GRU accuracy = 0.850
+  p = 0.7 : A* = 0.000   GRU accuracy = 0.831
+  p = 0.8 : A* = 0.000   GRU accuracy = 0.822
+  p = 0.9 : A* = 0.002   GRU accuracy = 0.892
+
+predictor at gateway (N=120): [persistence  RF  GRU]
+  load 0.5 : energy 35.48 41.01 40.60  FNR 0.112 0.043 0.044  delay 143.5 128.8 128.2 s
+  load 0.8 : energy 53.22 58.74 58.50  FNR 0.089 0.018 0.016  delay 179.0 176.7 175.3 s
+
+buckets in hybrid frames (N=120): promoted / contending / excluded
+  load 0.1 :  3.3 %  50.1 %  46.6 %
+  load 0.2 :  7.7 %  48.7 %  43.7 %
+  load 0.3 : 16.6 %  43.8 %  39.7 %
+  load 0.4 : 26.9 %  41.1 %  32.0 %
+  load 0.5 : 38.0 %  35.2 %  26.8 %
+  load 0.6 : 48.4 %  30.0 %  21.5 %
+  load 0.7 : 59.5 %  24.1 %  16.4 %
+  load 0.8 : 74.8 %  19.1 %   6.2 %
+  load 0.9 : 89.0 %   9.9 %   1.1 %
+
+all done in 146 s, plots in ../results/nextgen/
