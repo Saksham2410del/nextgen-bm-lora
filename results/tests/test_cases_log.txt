@@ -1,0 +1,14 @@
+TC1   Tsym = 0.032768 s, Rdata = 183.105 bit/s, Td = 3.0092 s, Tcp = 0.4369 s   PASS
+TC2   TDMA total energy N = 120: 77.10 J (paper 77.2 J, error 0.13 %)   PASS
+TC3   BM-LoRa p = 0.8: 87.88 J, TDMA: 77.10 J (BM-LoRa should be higher)   PASS
+TC4   BM-LoRa p = 0.2: 48.96 J, TDMA: 77.10 J (BM-LoRa should be lower)   PASS
+TC5   TDMA N = 60: equation 36.72 J, simulator 36.73 J (difference 0.00 %)   PASS
+TC6   BM-LoRa N = 60, p = 0.5: equation 30.00 J, simulator 29.91 J (difference 0.30 %)   PASS
+TC7   all contending: BM frame 4.1091 J / 37.92 s, hybrid frame 4.1091 J / 37.92 s   PASS
+TC8   all promoted: frame length 61.28 s, Tcp + N(Td + Tg) = 61.28 s   PASS
+TC9   critical node delivered at 3.4461 s, expected Tcp + Td = 3.4461 s   PASS
+TC10  expand_nodes: size 476 x 120, first 51 columns same as data, packets per shifted node kept   PASS
+TC11  excluded node with data: frame 1 type 2 (2 = hybrid), PDR 1.00, delay 35.0 s > Trep 30.9 s   PASS
+TC12  unusual reading only: PDR TDMA 1.00, PDR Next Gen 1.00   PASS
+
+12 of 12 test cases passed

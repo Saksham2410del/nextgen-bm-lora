@@ -9,7 +9,7 @@ Team: Vansh Ahuja (23102128), Saksham Kuksal (23102129), Prem Aggarwal (23102132
 
 ## Report
 
-Full project report (53 pages): [report/Major_Project_Report_Next_Gen_BM_LoRa.pdf](report/Major_Project_Report_Next_Gen_BM_LoRa.pdf) (Word version in the same folder).
+Full project report (100 pages): [report/Major_Project_Report_Next_Gen_BM_LoRa.pdf](report/Major_Project_Report_Next_Gen_BM_LoRa.pdf) (Word version in the same folder).
 
 ![System architecture](report/figures/d2_architecture.png)
 
@@ -33,7 +33,7 @@ The base paper energy model (Eq. 1-17, Table 3) is used for all protocols.
 data/       dataset and files made by python (data/sim is used by matlab)
 python/     data preparation and machine learning
 matlab/     energy model of base paper and simulation of all protocols
-results/    base_paper/ (replication), ml/ (model results), nextgen/ (final results)
+results/    base_paper/ (replication), ml/ (model results), nextgen/ (final results), tests/ (test case logs)
 report/     project report (pdf, docx) and the diagrams used in it
 ```
 
@@ -56,6 +56,15 @@ check_model          % frame simulator vs base paper equations
 run_nextgen          % all results of our protocol (~3 min)
 compare_base_paper   % Fig 5-7 of the base paper with our protocol added
 ```
+
+Test cases (section 4.3 of the report). Run them after the steps above:
+
+```
+test_cases                   % matlab folder, TC1-TC12: energy model and frame logic
+python check_outputs.py      # python folder, TC13-TC19: files made by the python scripts
+```
+
+All 19 pass. The console output of both is in `results/tests/`.
 
 ## Dataset
 
